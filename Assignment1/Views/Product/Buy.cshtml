@@ -1,0 +1,86 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Buy";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .square {
+            width: 300px;
+            height: 150px;
+            margin: 10px;
+            background-color: #787878;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border-radius : 5%;
+        }
+
+        .prod {
+            font-family: 'Arimo';
+            font-size: 16px;
+        }
+
+        .begin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bevan';
+            font-size: 20px;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="begin">
+        <p>Do you want to buy something ?&nbsp;</p>
+        <p>Here are the products available, do not miss the chance !</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="list-group">
+                <a asp-controller="Product" asp-action="Buy" asp-route-id="All"
+                   class="list-group-item
+                @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">
+                    All
+                </a>
+                @foreach (Category c in ViewBag.Categories)
+                {
+                    <a asp-controller="Product" asp-action="Buy" asp-route-id="@c.Name"
+                       class="list-group-item
+                         @(ViewBag.SelectedCategoryName == c.Name ? "active" : "")">
+                        @c.Name
+                    </a>
+                }
+            </div>
+        </div>
+
+        <div class="col-sm-10">
+            <div class="container">
+                @foreach (var product in Model)
+                {
+                        <a asp-controller="Product" asp-action="Details"
+                       asp-route-id="@product.ProductID"
+                        asp-route-slug="@product.Slug"><img class="square" src="~/img/@product.Image"></a>
+                }                
+            </div>
+        </div>
+    </div>
+    <footer>
+        @Html.Partial("~/Views/Footer.cshtml");
+    </footer>
+    
+</body>

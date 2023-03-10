@@ -1,0 +1,220 @@
+* {
+    font-size: 1em;
+}
+header+main+footer {
+    width: 100%;
+}
+div#nav~div#custom {
+    width: 100%;
+}
+header>i  {
+    padding-right:15px;
+}
+header p {
+    float: right;
+    margin-top: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+header p:not(a) {
+    color: red;
+}
+header p a{
+    text-decoration: none;
+    color: black;
+}
+header p a:hover{
+    font-size: 1.1em;
+    background-color: black;
+    color: white;
+}
+header p a:active{
+    font-size: 1.1em;
+    background-color: green;
+    color: white;
+}
+main,ul {
+    list-style-type: none;
+    float: right;
+    font-family: 'Arimo';
+}
+div#nav {
+    background-color: antiquewhite;
+    display: block;
+}
+
+main>div>ul>li {
+    display: inline;
+    padding-left: 30px;
+}
+
+main>div>ul>li>a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+main>div>ul>li>a:hover {
+    text-decoration: none;
+    color: cornsilk;
+    background-color: black;
+    padding: 5px;
+}
+
+main>div>ul>li>a:active {
+    text-decoration: none;
+    color: cornsilk;
+    background-color: darkgray;
+    padding: 5px;
+}
+div.hero {
+    column-count: 2;
+    background-color: #f8f2f2;
+    text-align: center;
+}
+#title {
+    font-family: 'Angkor';
+    font-size: 25px;
+}
+#expl {
+    font-family: 'Average Sans';
+    font-style: italic;
+}
+main div.hero a {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 8px;
+}
+main div.hero a:hover {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    font-size: 110%;
+}
+div.hero img {
+    width: 200px;
+    text-align: center;
+}
+#pf {
+    text-align: center;
+    font-family: 'Bevan';
+    font-size: 20px;
+    margin-bottom: 0%;
+}
+#pff {
+    text-align: center;
+    font-size: 105%;
+    margin-top: 0%;
+    padding-top: 0%;
+    font-family: 'Arimo';
+}
+#feat {
+    display: grid;
+    grid-template-areas: "ad hq lt uf";
+    text-align: center;
+    padding: 0% 10% 0%;
+}
+.com {
+    font-family: 'Arimo';
+}
+#custom {
+    text-align: center;
+    text-align: center;
+    font-family: 'Bevan';
+    font-size: 20px;
+} 
+.custom {
+    column-count: 3;
+    text-align: center;
+    padding: 0% 15% 0%;
+}
+div.custom img {
+    border-radius: 100%;
+    width: 80px;
+}
+.names{
+    font-family: 'Basic';
+    font-size: 22px;
+    margin: 0px;
+    color: darkslategrey;
+}
+
+#work1{
+    font-family: 'Unkempt';
+    margin: 0%;
+    padding: 0%;
+}
+#work2{
+    font-family: 'Unkempt';
+    margin: 0%;
+    padding: 0%;
+}
+#work3{
+    font-family: 'Unkempt';
+    margin: 0%;
+    padding: 0%;
+}
+#case1 {
+    border: 1px solid black;
+    padding: 5% 1% 0%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    margin-bottom: 1px;
+    height: 100%;
+}
+#case2 {
+    border: 1px solid black;
+    padding: 5% 1% 0%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    margin-bottom: 1px;
+    height: 100%;
+}
+#case3 {
+    border: 1px solid black;
+    padding: 5% 1% 0%;
+    border-radius: 5%;
+    box-shadow: 2px 2px black;
+    margin-bottom: 1px;
+    height: 100%;
+}
+svg {
+    width: 12.5%;
+}
+#board {
+    width: 8%;
+}
+#hq {
+    margin-top: 0%;
+}
+#comm1 {
+    font-family: 'Arimo';
+    margin-top: 2%;
+}
+#comm2 {
+    font-family: 'Arimo';
+    margin-top: 2%;
+}
+#comm3 {
+    font-family: 'Arimo';
+    margin-top: 2%;
+}
+#hq {
+    font-family: 'Arimo';
+    grid-area: hq;
+}
+#ad {
+    font-family: 'Arimo';
+    grid-area: ad;
+}
+#lt {
+    font-family: 'Arimo';
+    grid-area: lt;
+}
+#uf {
+    font-family: 'Arimo';
+    grid-area: uf;
+}
+.page {
+    margin: 15px;
+}

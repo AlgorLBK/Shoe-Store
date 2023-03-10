@@ -1,0 +1,149 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Sell";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Angkor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+    <style>
+        * {
+            font-family: 'Arimo';
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px;
+            font-family: 'Angkor';
+            font-size: 25px;
+        }
+
+        #moi {
+            margin: auto;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            justify-content: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 10%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 80%;
+            padding: 10px 0px;
+            margin: 0 10%;
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+
+        input[type="text"], input[type="number"], input[type="email"], input[type="date"] {
+            width: 80%;
+            padding: 10px 0px;
+            margin: 0 10%;
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            width: 80%;
+            padding: 10px 0px;
+            margin: 0 10%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #3e8e41;
+            }
+    </style>
+</head>
+<body>
+    <div id="moi">
+        <h1>Please, use this form to enter your product's details</h1>
+        <form asp-action="Add" method="post" enctype="multipart/form-data">
+
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" type="text" id="name" name="name" required>
+
+            <label asp-for="Description">Description:</label>
+            <input asp-for="Description" type="text" id="description" name="description" required>
+
+            <label asp-for="Price">Minimum Cost:</label>
+            <input asp-for="Price" type="number" id="price" name="price" required>
+
+            <label asp-for="StartBid">Starting Bid Date:</label>
+            <input asp-for="StartBid" type="date" id="datestart" name="datestart" required>
+
+            <label asp-for="EndBid">Closing Bid Date:</label>
+            <input asp-for="EndBid" type="date" id="dateend" name="dateend" required>
+
+            <label asp-for="Condition">Condition:</label>
+            <select asp-for="Condition" id="condition" name="condition" required>
+                <option value="">Choose a condition</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Bad">Very Bad</option>
+            </select>
+
+            <label asp-for="CategoryID">Category:</label>
+            <select asp-for="CategoryID" id="category" name="category" required>
+                <option value="">Choose a category</option>
+                <option value="1">Nike</option>
+                <option value="2">Adidas</option>
+                <option value="3">Puma</option>
+            </select>
+            
+            <label asp-for="UserAuhtor">Owner:</label>
+            <input asp-for="UserAuhtor" type="email" id="user" name="user" required>
+
+            <label asp-for="Code">Image:</label>
+            <input asp-for="Code" type="file" id="code" name="code" accept="image/jpeg" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        @Html.Partial("~/Views/Footer.cshtml");
+    </footer>
+</body>
+</html>
